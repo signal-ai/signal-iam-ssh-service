@@ -25,7 +25,7 @@ Ensure the script has the following permissions:
 owner=root group=root mode=0755
 ```
 
-Ensure the following varible is set correctly in the script for your systems syslog
+Ensure the following variable is set correctly in the script for your systems syslog
 ```
 SYSLOG_ADDRESS = '/dev/log'
 ```
