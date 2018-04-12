@@ -29,3 +29,15 @@ Ensure the following variable is set correctly in the script for your systems sy
 ```
 SYSLOG_ADDRESS = '/dev/log'
 ```
+
+Example audit entry
+```
+2018-03-21T12:32:10,000 sshd Server listening on 0.0.0.0 port 22.
+2018-03-21T12:32:10,000 sshd Server listening on :: port 22.
+2018-03-21T12:32:16,000 iam-ssh Public key found in IAM for user: xxxxxxxxx.xxxxxxxx
+2018-03-21T12:32:16,000 iam-ssh Public key found in IAM for user: xxxxxxxxx.xxxxxxxx
+2018-03-21T12:32:16,000 sshd Accepted publickey for ec2-user from xxx.xxx.xxx.xxx port xxxxx ssh2: RSA SHA256:xxxx/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2018-03-21T12:32:16,000 sshd pam_unix(sshd:session): session opened for user ec2-user by (uid=0)
+```
+
+Close inspection reveals the AuthorizedKeysCommand is called twice which is not ideal, however this seems to be a artifact of how SSHD and pam_unix works together, and performance for our use case is fine.
