@@ -1,5 +1,5 @@
 # signal-iam-ssh-service
-A script that is executed by the sshd authorized_keys command to retreive active public ssh keys from IAM for a specific user for ssh login to AWS instances.
+A script that is executed by the sshd authorized_keys command to retrieve active public ssh keys from IAM for a specific user for ssh login to AWS instances.
 
 ## Intention
 We wanted a simple lightweight way of retrieving public keys with caching from IAM with no real granularity of role.
