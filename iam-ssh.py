@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+#
+# Copyright 2018 Signal Media Ltd
+# A script that is executed by the sshd authorized_keys command to retrieve active
+# public ssh keys from IAM for a specific user for ssh login to AWS instances.
+
 import boto3
 import sys, logging
 import logging.handlers
